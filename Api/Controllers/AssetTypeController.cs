@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Service.Cqrs.Commands.Assets.Requests;
+using Service.Cqrs.Queries.Assets.Requests;
 
 namespace Api.Controllers;
 
@@ -17,7 +18,7 @@ public class AssetTypeController(IMediator mediator): ControllerBase
     /// <returns></returns>
     [HttpPost]
     public async Task<IActionResult> SaveAssetType(
-        [FromBody] CreateAssetTypeRequest request
+        [FromBody] CreateAssetTypeCommand request
     )
     {
         var response = await _mediator.Send(request);
@@ -28,21 +29,24 @@ public class AssetTypeController(IMediator mediator): ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAssetTypes()
     {
-        var response = await _mediator.Send(new GetAssetTypesRequest());
+        var response = await _mediator.Send(new GetAssetTypesQuery());
 
         return Ok(response);
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetAssetTypeById(int id)
+    public async Task<IActionResult> GetAssetTypeById(string id)
     {
-        var response = await _mediator.Send(new GetAssetTypeByIdRequest(id));
+        var response = await _mediator.Send(new GetAssetTypeByIdQuery(id));
+
+        if(response is null)
+            return NotFound();
 
         return Ok(response);
-    }
+    }   
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateAssetType(int id, [FromBody] UpdateAssetTypeRequest request)
+    public async Task<IActionResult> UpdateAssetType(string id, [FromBody] UpdateAssetTypeCommand request)
     {
         request.Id = id;
         var response = await _mediator.Send(request);
@@ -51,9 +55,9 @@ public class AssetTypeController(IMediator mediator): ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteAssetType(int id)
+    public async Task<IActionResult> DeleteAssetType(string id)
     {
-        var response = await _mediator.Send(new DeleteAssetTypeRequest(id));
+        var response = await _mediator.Send(new DeleteAssetTypeCommand(id));
 
         return Ok(response);
     }

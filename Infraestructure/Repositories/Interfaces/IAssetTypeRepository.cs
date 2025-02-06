@@ -3,4 +3,4 @@ using Domain.Domains.Assets;
 
 namespace Infraestructure.Repositories.Interfaces;
 
-public interface IAssetRepository : IBaseRepository<Asset> {}
+public interface IAssetTypeRepository : IBaseRepository<AssetType> {}

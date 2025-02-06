@@ -6,19 +6,19 @@ using Service.Cqrs.Queries.Assets.Requests;
 
 namespace Service.Cqrs.Queries.Assets.Handlers;
 
-public class GetAssetTypesHandler : IRequestHandler<GetAssetTypesRequest, IEnumerable<AssetType>>
+public class GetAssetTypesHandler : IRequestHandler<GetAssetTypesQuery, IEnumerable<AssetType>>
 {
-    private readonly IAssetRepository _assetRepository;
+    private readonly IAssetTypeRepository _assetTypeRepository;
 
-    public GetAssetTypesHandler(IAssetRepository assetRepository)
+    public GetAssetTypesHandler(IAssetTypeRepository assetTypeRepository)
     {
-        _assetRepository = assetRepository;
+        _assetTypeRepository = assetTypeRepository;
     }
 
-    public async Task<IEnumerable<AssetType>> Handle(GetAssetTypesRequest request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<AssetType>> Handle(GetAssetTypesQuery request, CancellationToken cancellationToken)
     {
         var filter = new FilterDefinitionBuilder<AssetType>().Empty;
         
-        return await _assetRepository.GetAll(filter, cancellationToken: cancellationToken);
+        return await _assetTypeRepository.GetAll(filter, cancellationToken: cancellationToken);
     }
 }

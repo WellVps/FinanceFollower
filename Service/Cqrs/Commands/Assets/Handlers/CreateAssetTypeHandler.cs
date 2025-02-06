@@ -5,16 +5,16 @@ using Service.Cqrs.Commands.Assets.Requests;
 
 namespace Service.Cqrs.Commands.Assets.Handlers;
 
-public class CreateAssetTypeHandler : IRequestHandler<CreateAssetTypeRequest, AssetType>
+public class CreateAssetTypeHandler : IRequestHandler<CreateAssetTypeCommand, AssetType>
 {
-    private readonly IAssetRepository _assetTypeRepository;
+    private readonly IAssetTypeRepository _assetTypeRepository;
 
-    public CreateAssetTypeHandler(IAssetRepository assetTypeRepository)
+    public CreateAssetTypeHandler(IAssetTypeRepository assetTypeRepository)
     {
         _assetTypeRepository = assetTypeRepository;
     }
 
-    public async Task<AssetType> Handle(CreateAssetTypeRequest request, CancellationToken cancellationToken)
+    public async Task<AssetType> Handle(CreateAssetTypeCommand request, CancellationToken cancellationToken)
     {
         var assetType = new AssetType(request.Description, icon: request.Icon);
 

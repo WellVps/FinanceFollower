@@ -1,8 +1,8 @@
-using BaseDomain;
+using BaseDomain.Entity;
 
 namespace Domain.Domains.Assets;
 
-public class AssetType: BaseEntity
+public class AssetType: AuditedBaseEntity
 {
     public string Description { get; set; }
     public bool Active { get; set; }
@@ -13,6 +13,8 @@ public class AssetType: BaseEntity
         Description = description;
         Active = active;
         Icon = icon;
+        CreatedAt = DateTime.UtcNow;
+        UpdatedAt = DateTime.UtcNow;
     }
 
     protected override void ValidateRules()

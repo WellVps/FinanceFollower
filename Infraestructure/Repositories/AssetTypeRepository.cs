@@ -5,7 +5,7 @@ using Infraestructure.Repositories.Interfaces;
 
 namespace Infraestructure.Repositories;
 
-public class AssetRepository : BaseRepository<Asset>, IAssetRepository
+public class AssetTypeRepository : BaseRepository<AssetType>, IAssetTypeRepository
 {
-    public AssetRepository(IMainContext context) : base(context) {}
+    public AssetTypeRepository(IMainContext context) : base(context) {}
 }
