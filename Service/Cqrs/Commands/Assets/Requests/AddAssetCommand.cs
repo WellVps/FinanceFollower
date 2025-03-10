@@ -6,5 +6,6 @@ namespace Service.Cqrs.Commands.Assets.Requests;
 public record struct AddAssetCommand (
     string Ticker,
     string Name,
-    string IdAssetType
+    string IdAssetType,
+    string DataSource
 ) :IRequest<Asset>;

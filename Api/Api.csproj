@@ -11,6 +11,7 @@
         <ProjectReference Include="..\Base\Service\BaseService.csproj" />
         <ProjectReference Include="..\Infraestructure\Infraestructure.csproj" />
         <ProjectReference Include="..\Service\Service.csproj" />
+        <ProjectReference Include="..\Adapters\YahooFinance\YahooFinance.csproj" />
     </ItemGroup>
 
   <ItemGroup>
