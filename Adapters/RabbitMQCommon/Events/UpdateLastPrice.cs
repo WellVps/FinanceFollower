@@ -7,4 +7,4 @@ namespace RabbitMQCommon.Events;
 /// </summary>
 /// <param name="Ticker"></param>
 /// <param name="LastPrice"></param>
-public record UpdateLastPrice(string Ticker, double LastPrice) : Event;
+public record UpdateLastPrice(string Ticker) : Event;

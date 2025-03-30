@@ -17,7 +17,7 @@ public class GetAssetByTickerHandler : IRequestHandler<GetAssetByTickerQuery, As
 
     public async Task<Asset> Handle(GetAssetByTickerQuery request, CancellationToken cancellationToken)
     {
-        var filter = new FilterDefinitionBuilder<Asset>().Eq(x => x.Id, request.Ticker);
+        var filter = new FilterDefinitionBuilder<Asset>().Eq(x => x.Ticker, request.Ticker);
 
         var asset = await _assetRepository.GetFirstOrDefault(filter, cancellationToken: cancellationToken);
         return asset ?? throw new KeyNotFoundException($"Asset with ticker '{request.Ticker}' not found.");

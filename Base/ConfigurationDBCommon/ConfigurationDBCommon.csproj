@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infraestructure\BaseInfraestructure.csproj" />
+    <ProjectReference Include="..\Service\BaseService.csproj" />
+    <ProjectReference Include="..\Domain\BaseDomain.csproj" />
+    <ProjectReference Include="..\Contract\BaseContract.csproj" />
+  </ItemGroup>
+
+</Project>

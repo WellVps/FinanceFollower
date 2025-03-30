@@ -12,6 +12,7 @@
         <ProjectReference Include="..\Infraestructure\Infraestructure.csproj" />
         <ProjectReference Include="..\Service\Service.csproj" />
         <ProjectReference Include="..\Adapters\YahooFinance\YahooFinance.csproj" />
+        <ProjectReference Include="..\Adapters\RabbitMQCommon\RabbitMQCommon.csproj" />
     </ItemGroup>
 
   <ItemGroup>

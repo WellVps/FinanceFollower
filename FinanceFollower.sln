@@ -33,13 +33,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahooFinance", "Adapters\Ya
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQCommon", "Adapters\RabbitMQCommon\RabbitMQCommon.csproj", "{8F4DED40-D1E8-4D12-A4B0-0B31D6702B60}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hangfire", "Hangfire", "{F022CA4B-0A15-FC35-B1A5-1787E5D274B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsService", "Hangfire\JobsService\JobsService.csproj", "{736DA5DE-B808-4860-8F9E-D8B74DDEC085}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsAPI", "Hangfire\JobsAPI\JobsAPI.csproj", "{38C80CB3-5FC8-49A6-AC16-E883F9AEB17E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationDBCommon", "Base\ConfigurationDBCommon\ConfigurationDBCommon.csproj", "{BAAA4FA2-2FB6-46D2-9500-87157ED5A3D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{93962A16-F69E-4612-9406-4D726E88520D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -94,6 +99,21 @@ Global
 		{8F4DED40-D1E8-4D12-A4B0-0B31D6702B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F4DED40-D1E8-4D12-A4B0-0B31D6702B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F4DED40-D1E8-4D12-A4B0-0B31D6702B60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{736DA5DE-B808-4860-8F9E-D8B74DDEC085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{736DA5DE-B808-4860-8F9E-D8B74DDEC085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{736DA5DE-B808-4860-8F9E-D8B74DDEC085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{736DA5DE-B808-4860-8F9E-D8B74DDEC085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C80CB3-5FC8-49A6-AC16-E883F9AEB17E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C80CB3-5FC8-49A6-AC16-E883F9AEB17E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C80CB3-5FC8-49A6-AC16-E883F9AEB17E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C80CB3-5FC8-49A6-AC16-E883F9AEB17E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAAA4FA2-2FB6-46D2-9500-87157ED5A3D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAAA4FA2-2FB6-46D2-9500-87157ED5A3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAAA4FA2-2FB6-46D2-9500-87157ED5A3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAAA4FA2-2FB6-46D2-9500-87157ED5A3D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FB203267-BA33-4A0E-B082-EEF3716E1AE8} = {DE28893E-E6A9-41C3-94F0-ABA4C2D18048}
@@ -104,5 +124,8 @@ Global
 		{78C5B0D6-0AD8-473F-B237-621BD67E3125} = {44A31EDD-EF24-4F85-867A-AE12889D2DDC}
 		{3136AA72-32C8-47D3-9475-36F294516AC6} = {44A31EDD-EF24-4F85-867A-AE12889D2DDC}
 		{8F4DED40-D1E8-4D12-A4B0-0B31D6702B60} = {44A31EDD-EF24-4F85-867A-AE12889D2DDC}
+		{736DA5DE-B808-4860-8F9E-D8B74DDEC085} = {F022CA4B-0A15-FC35-B1A5-1787E5D274B2}
+		{38C80CB3-5FC8-49A6-AC16-E883F9AEB17E} = {F022CA4B-0A15-FC35-B1A5-1787E5D274B2}
+		{BAAA4FA2-2FB6-46D2-9500-87157ED5A3D6} = {DE28893E-E6A9-41C3-94F0-ABA4C2D18048}
 	EndGlobalSection
 EndGlobal
