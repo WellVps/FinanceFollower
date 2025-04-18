@@ -10,4 +10,11 @@ public static class EventBusMapping
         withDeadletter: false,
         prefetchCount: 10
     );
+
+    public static readonly EventBusOptions UpdateAssets = EventBusOptions.Config(
+        ExchangeMapping.DefaultExchange,
+        QueueMapping.UpdateAssets,
+        withDeadletter: false,
+        prefetchCount: 10
+    );
 }

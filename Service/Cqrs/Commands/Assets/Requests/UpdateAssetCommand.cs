@@ -25,7 +25,7 @@ public struct UpdateAssetCommand : IRequest<bool>
         Id = asset.Id;
         Ticker = asset.Ticker;
         Name = asset.Name;
-        IdAssetType = asset.IdAssetType;
+        IdAssetType = asset.AssetTypeId;
         Active = asset.Active;
     }
 }

@@ -4,6 +4,7 @@ namespace Domain.Domains.Investments;
 
 public class InvestmentEntry: AuditedBaseEntity
 {
+    public string UserId { get; set; }
     public DateTime InvestmentDate { get; set; }
     public double TotalAmount { get; set; }
     public double TotalTax { get; set; }
@@ -11,7 +12,7 @@ public class InvestmentEntry: AuditedBaseEntity
 
     public class AssetsList
     {
-        public string IdAsset { get; set; }
+        public string AssetId { get; set; }
         public double Price { get; set; }
         public double Quantity { get; set; } 
         public double Amount { get; set; }
@@ -38,7 +39,7 @@ public class InvestmentEntry: AuditedBaseEntity
         {
             foreach (var asset in Assets)
             {
-                if (string.IsNullOrEmpty(asset.IdAsset))
+                if (string.IsNullOrEmpty(asset.AssetId))
                 {
                     DomainValidation.AddNotification("IdAsset", "Asset is required");
                 }

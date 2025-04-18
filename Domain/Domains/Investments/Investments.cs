@@ -4,6 +4,8 @@ namespace Domain.Domains.Investments;
 
 public class Investments: AuditedBaseEntity
 {
+    public string UserId { get; set; }
+    public string AssetId { get; set; }
     public DateTime LastBought { get; set; }
     public double Quantity { get; set; }
     public double AveragePrice { get; set; }
@@ -11,8 +13,10 @@ public class Investments: AuditedBaseEntity
     public double Price { get; set; }
     public double TotalAmount { get; set; }
 
-    public Investments(DateTime lastBought, double quantity, double averagePrice, double totalInvested, double price, double totalAmount)
+    public Investments(string userId, string assetId, DateTime lastBought, double quantity, double averagePrice, double totalInvested, double price, double totalAmount)
     {
+        UserId = userId;
+        AssetId = assetId;
         LastBought = lastBought;
         Quantity = quantity;
         AveragePrice = averagePrice;
@@ -25,6 +29,11 @@ public class Investments: AuditedBaseEntity
 
     protected override void ValidateRules()
     {
+        if (string.IsNullOrEmpty(UserId))
+        {
+            DomainValidation.AddNotification("UserId", "UserId is required");
+        }
+
         if (LastBought == DateTime.MinValue)
         {
             DomainValidation.AddNotification("LastBought", "Last Bought is required");
