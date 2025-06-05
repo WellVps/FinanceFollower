@@ -30,4 +30,20 @@ public class AuthenticationController(
 
         return Ok(await mediator.Send(command, cancellationToken));
     }
+
+    [HttpPost]
+    [Route("Refresh")]
+    public async Task<IActionResult> RefreshToken(
+        [FromBody] RefreshTokenDto body,
+        CancellationToken cancellationToken
+    )
+    {
+        var command = new RefreshTokenRequest()
+        {
+            RefreshToken = body.RefreshToken,
+            TokenConfigs = configuration.GetUserTokenConfiguration()
+        };
+
+        return Ok(await mediator.Send(command, cancellationToken));
+    }
 }

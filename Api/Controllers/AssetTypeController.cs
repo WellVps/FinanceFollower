@@ -1,4 +1,6 @@
+using BaseApi.Auth.Constants;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Cqrs.Commands.Assets.Requests;
 using Service.Cqrs.Queries.Assets.Requests;
@@ -27,6 +29,7 @@ public class AssetTypeController(IMediator mediator): ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Policy = Policies.Client)]
     public async Task<IActionResult> GetAssetTypes()
     {
         var response = await _mediator.Send(new GetAssetTypesQuery());

@@ -1,4 +1,3 @@
-using BaseApi.Auth.Handlers;
 using Infraestructure.Repositories.Interfaces;
 using Service.Cqrs.Commands.Authentication.Requests;
 using Service.Cqrs.Commands.Authentication.Responses;

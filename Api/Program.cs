@@ -24,6 +24,15 @@ builder.Services.AddMongoContext(builder.Configuration);
 builder.Services.AddRepositories();
 builder.Services.AddServices();
 
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(policy => {
+        policy.WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
 var app = builder.Build();
 
 MessageBrokerConfig.SubscribeConsumers(app, builder.Configuration);
@@ -33,6 +42,7 @@ app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Main API V1");
 });
+app.UseCors();
 
 app.UseAuthorization();
 
